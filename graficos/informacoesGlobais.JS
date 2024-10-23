@@ -8,25 +8,20 @@ async function visualizarInformacoesGlobais() {  //essa função não terá par�
         const res = await fetch(url) //palavra  await, para esperar a requisição ser finalizada e fetch() para passar a url.
 
         const dados = await res.json()  //variável para guardar a resposta recebida.
-/*
+
+        const pessoasConectadas = (dados.total_pessoas_conectadas / 1e9)
         const pessoasNoMundo = (dados.total_pessoas_mundo / 1e9)
-        const pessoasAcessoEducacao = (dados.total_pessoas_com_acesso_a_educacao / 1e9)
         const horas = parseInt(dados.tempo_medio)
-        const minutos = Math.round((dados.tempo_medio_dia_estudando - horas) * 100)
+        const minutos = Math.round((dados.tempo_medio - horas) * 100)
         const porcentagemConectada = ((pessoasConectadas / pessoasNoMundo ) * 100).toFixed(2)
-*/    
+    
         const paragrafo = document.createElement('p')
         paragrafo.classList.add('graficos-container__texto')
-        paragrafo.innerHTML = 
-        `Em um mundo com <span>${dados.total_pessoas_mundo}</span> bilhões de pessoas, a educação emerge 
-        como a verdadeira chave para a transformação social. 
-        Sendo que <span>${dados.total_pessoas_com_acesso_a_educacao}</span> de pessoas têm acesso à educação com tempo médio 
-        tempo de <span>${dados.tempo_medio_dia_estudando}</span> horas de estudos por dia.`
-        console.log(paragrafo)
+        paragrafo.innerHTML = `Você sabia que o mundo tem <span>${dados.total_pessoas_mundo}</span> de pessoas e que aproximadamente <span>${dados.total_pessoas_conectadas}</span> estão conectadas em alguma rede social e passam em média <span>${dados.tempo_medio}</span> horas conectadas.`
+    console.log(paragrafo)
 
-        const container = document.getElementById('graficos-container')
-        container.appendChild(paragrafo)
-        }
-    
-        visualizarInformacoesGlobais()  //invocar a função
-        */
+    const container = document.getElementById('graficos-container')
+    container.appendChild(paragrafo)
+    }
+
+    visualizarInformacoesGlobais()  //invocar a função
