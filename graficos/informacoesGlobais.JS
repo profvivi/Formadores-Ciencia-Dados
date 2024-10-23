@@ -8,13 +8,13 @@ async function visualizarInformacoesGlobais() {  //essa função não terá par�
         const res = await fetch(url) //palavra  await, para esperar a requisição ser finalizada e fetch() para passar a url.
 
         const dados = await res.json()  //variável para guardar a resposta recebida.
-
+/*
         const pessoasNoMundo = (dados.total_pessoas_mundo / 1e9)
         const pessoasAcessoEducacao = (dados.total_pessoas_com_acesso_a_educacao / 1e9)
         const horas = parseInt(dados.tempo_medio)
         const minutos = Math.round((dados.tempo_medio_dia_estudando - horas) * 100)
         const porcentagemConectada = ((pessoasConectadas / pessoasNoMundo ) * 100).toFixed(2)
-    
+*/    
         const paragrafo = document.createElement('p')
         paragrafo.classList.add('graficos-container__texto')
         paragrafo.innerHTML = 
