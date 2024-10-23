@@ -1,6 +1,6 @@
 //variável para guardar a URL da base de dados
 
-const url = 'https://raw.githubusercontent.com/guilhermeonrails/api/main/dados-globais.json'
+const url = 'https://raw.githubusercontent.com/profvivi/Formadores-Ciencia-Dados/refs/heads/main/graficos/db.json'
 
 //função assíncrona( ao fazer uma requisição para a API, o JavaScript espera ela ser concluída.)
 async function visualizarInformacoesGlobais() {  //essa função não terá parâmetros.
